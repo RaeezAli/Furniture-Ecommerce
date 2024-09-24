@@ -3,16 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-import './index.css';
-
 // Layout
 import Layout from './Layout';
 
 // Pages
-import Home from './components/Home.jsx';
-import About from './components/About.jsx';
-import Contact from './components/Contact.jsx';
-import Shop from './components/Shop.jsx';
+import Home from './screens/Home.jsx';
+import About from './screens/About.jsx';
+import Contact from './screens/Contact.jsx';
+import Shop from './screens/Shop.jsx';
 
 const router = createBrowserRouter([
   {

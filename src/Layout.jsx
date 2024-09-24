@@ -1,12 +1,12 @@
-// import Footer from './components/Footer/Footer'
-import Navigation from './components/Navbar.jsx';
+import Navigation from './components/common/Navbar';
 import { Outlet } from 'react-router-dom';
+import Footer from './components/common/Footer.jsx';
 export default function Layout() {
   return (
     <>
       <Navigation />
       <Outlet />
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }

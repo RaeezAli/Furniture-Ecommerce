@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
 // Styling
-import '../App.css';
+import '../../App.jsx';
 
 // Logo
 import Logo from '../../assets/Logo.jsx';
@@ -24,12 +24,12 @@ export default function Navbar() {
     }
 
     return (
-        <header className="w-full h-24 bg-white px-16 py-7 flex flex-row justify-between absolute top-0 left-0">
+        <header className="w-full bg-white px-16 py-7 flex flex-row justify-between items-center fixed top-0 left-0">
             <div className="h-full flex items-center">
                 {/* <Icon /> */}
                 <Logo />
             </div>
-            <nav className="features-links-tags h-full flex items-center gap-12">
+            <nav className="features-links-tags h-full flex justify-center gap-12">
                 <NavLink
                     to='/'
                     style={({ isActive }) => (isActive ? activeColor : nonActiveColor)}
