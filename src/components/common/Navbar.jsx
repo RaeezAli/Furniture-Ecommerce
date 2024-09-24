@@ -4,14 +4,14 @@ import { NavLink } from 'react-router-dom';
 import '../App.css';
 
 // Logo
-import Logo from '../assets/Logo.jsx';
+import Logo from '../../assets/Logo.jsx';
 // import Icon from '../assets/Icon.jsx';
 
 // Icons
-import AcountIcon from '../assets/Acount-Alert.jsx';
-import SearchIcon from '../assets/SearchIcon.jsx';
-import HeartIcon from '../assets/Heart.jsx';
-import CartIcon from '../assets/Cart.jsx';
+import AcountIcon from '../../assets/Acount-Alert.jsx';
+import SearchIcon from '../../assets/SearchIcon.jsx';
+import HeartIcon from '../../assets/Heart.jsx';
+import CartIcon from '../../assets/Cart.jsx';
 
 export default function Navbar() {
 
