@@ -4,6 +4,10 @@ import Image1 from '../Images/Home/Mask Group (1).png';
 import Image2 from '../Images/Home/Image-living room.png';
 import Image3 from '../Images/Home/Mask Group.png';
 
+import Card from '../components/common/Card';
+
+import getProducts from '../actions/getProducts';
+
 export default function Home() {
 
   const range = [
@@ -53,28 +57,17 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className='py-10 px-32 grid gap-10'>
+      <section className='py-10 px-32 grid gap-5'>
         <h3
           style={{ color: 'rgba(58, 58, 58, 1)' }}
           className='text-center font-bold text-4xl'
         >Our Products</h3>
         <div className='grid grid-cols-4 gap-6'>
-          <div>
-            <img src="" alt="" />
-            <article>
-              <h6>Syltherine</h6>
-              <p>Stylish cafe chair</p>
-              <p>Rp 2.500.000 <span>Rp 3.500.000</span></p>
-            </article>
-          </div>
-          <div>
-            <img src="" alt="" />
-            <article>
-              <h6>Syltherine</h6>
-              <p>Stylish cafe chair</p>
-              <p>Rp 2.500.000 <span>Rp 3.500.000</span></p>
-            </article>
-          </div>
+          {getProducts().map((item, index) => (
+            <div key={index} className="group">
+              <Card props={item} />
+            </div>
+          ))}
         </div>
       </section>
     </main>
