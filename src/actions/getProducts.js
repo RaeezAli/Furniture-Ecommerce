@@ -41,7 +41,7 @@ export default function getProducts() {
                 type: "Lamp",
                 price: "1,500.000",
                 oldprice: "2,000.000",
-                time: "New",
+                time: "30%",
                 image: image4,
             },{   
                 id: 1,
@@ -77,7 +77,7 @@ export default function getProducts() {
                 type: "Lamp",
                 price: "1,500.000",
                 oldprice: "2,000.000",
-                time: "New",
+                time: "50%",
                 image: image4,
             },
         ];

@@ -1,12 +1,19 @@
+
+
 import '../App.css';
 
 import Image1 from '../Images/Home/Mask Group (1).png';
 import Image2 from '../Images/Home/Image-living room.png';
 import Image3 from '../Images/Home/Mask Group.png';
 
+// Card Component
 import Card from '../components/common/Card';
 
+// Dummy Data 
 import getProducts from '../actions/getProducts';
+
+// Slider Image
+import SliderImage from '../Images/Slider/Slider1.png';
 
 export default function Home() {
 
@@ -24,6 +31,7 @@ export default function Home() {
       title: 'Bedroom',
     }
   ];
+
 
   return (
     <main id='page-1' className='mt-20'>
@@ -68,6 +76,48 @@ export default function Home() {
               <Card props={item} />
             </div>
           ))}
+        </div>
+        <div className='flex justify-center'>
+          <button
+            style={{ color: 'rgba(184, 142, 47, 1)', border: '1px solid rgba(184, 142, 47,1)' }}
+            className='w-max bg-white py-2 px-6 text-base font-semibold'
+          >View All Products</button>
+        </div>
+      </section>
+      <section style={{ background: 'rgba(252, 248, 243, 1)' }} className='py-10 pl-32 flex gap-5'>
+        <aside className='max-w-[400px] flex flex-col gap-4 justify-center'>
+          <article className='grid gap-2'>
+            <h3 style={{ color: "rgba(58, 58, 58, 1)" }} className='font-bold text-4xl'>50+ Beautiful rooms inspiration</h3>
+            <p style={{ color: 'rgba(97, 97, 97, 1)' }} className='font-medium text-base'>Our designer already made a lot of beautiful prototipe of rooms that inspire you</p>
+          </article>
+          <button
+            style={{ backgroundColor: 'rgba(184, 142, 47,1)' }}
+            className='w-max text-white py-2 px-6 text-base font-semibold'
+          >Explore More</button>
+        </aside>
+        <div className="flex overflow-hidden space-x-5">
+          {/* <marquee className='w-full flex' beha direction="left">*/}
+
+          <img className='h-[450px]' src={SliderImage} alt="" />
+          <img className='h-[450px]' src={SliderImage} alt="" />
+          <img className='h-[450px]' src={SliderImage} alt="" />
+          {/*</marquee> */}
+        </div>
+
+      </section>
+      <section className='py-10 px-32 grid gap-10'>
+        <article className='grid gap-1'>
+          <p
+            style={{ color: 'rgba(102, 102, 102, 1)' }}
+            className='text-center font-semibold text-xl'
+          >Share your setup with</p>
+          <h3
+            style={{ color: 'rgba(51, 51, 51, 1)' }}
+            className='text-center font-bold text-4xl'
+          >#FuniroFurniture</h3>
+        </article>
+        <div>
+
         </div>
       </section>
     </main>
