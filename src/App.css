@@ -11,3 +11,27 @@
     line-height: 24px;
     text-align: left;
 }
+
+/* Slider CSS */
+
+.swiper {
+    width: 100%;
+    height: 450px;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}

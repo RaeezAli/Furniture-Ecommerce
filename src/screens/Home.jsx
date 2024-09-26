@@ -1,4 +1,11 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+// import required modules
+import { Pagination } from 'swiper/modules';
 
 import '../App.css';
 
@@ -13,7 +20,11 @@ import Card from '../components/common/Card';
 import getProducts from '../actions/getProducts';
 
 // Slider Image
-import SliderImage from '../Images/Slider/Slider1.png';
+import SliderImage1 from '../Images/Slider/Slider1.png';
+import SliderImage2 from '../Images/Slider/Slider2.png';
+import SliderImage3 from '../Images/Slider/Slider3.png';
+import SliderImage4 from '../Images/Slider/Slider4.png';
+import SliderImage5 from '../Images/Slider/Slider5.png';
 
 export default function Home() {
 
@@ -85,7 +96,7 @@ export default function Home() {
         </div>
       </section>
       <section style={{ background: 'rgba(252, 248, 243, 1)' }} className='py-10 pl-32 flex gap-5'>
-        <aside className='max-w-[400px] flex flex-col gap-4 justify-center'>
+        <aside className='flex flex-col gap-4 justify-center'>
           <article className='grid gap-2'>
             <h3 style={{ color: "rgba(58, 58, 58, 1)" }} className='font-bold text-4xl'>50+ Beautiful rooms inspiration</h3>
             <p style={{ color: 'rgba(97, 97, 97, 1)' }} className='font-medium text-base'>Our designer already made a lot of beautiful prototipe of rooms that inspire you</p>
@@ -95,13 +106,20 @@ export default function Home() {
             className='w-max text-white py-2 px-6 text-base font-semibold'
           >Explore More</button>
         </aside>
-        <div className="flex overflow-hidden space-x-5">
-          {/* <marquee className='w-full flex' beha direction="left">*/}
-
-          <img className='h-[450px]' src={SliderImage} alt="" />
-          <img className='h-[450px]' src={SliderImage} alt="" />
-          <img className='h-[450px]' src={SliderImage} alt="" />
-          {/*</marquee> */}
+        <div className="w-full flex justify-center overflow-hidden">
+          <Swiper
+            pagination={{
+              dynamicBullets: true,
+            }}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
+            <SwiperSlide><img className='h-[450px] w-full' src={SliderImage1} alt="" /></SwiperSlide>
+            <SwiperSlide><img className='h-[450px] w-full' src={SliderImage2} alt="" /></SwiperSlide>
+            <SwiperSlide><img className='h-[450px] w-full' src={SliderImage3} alt="" /></SwiperSlide>
+            <SwiperSlide><img className='h-[450px] w-full' src={SliderImage4} alt="" /></SwiperSlide>
+            <SwiperSlide><img className='h-[450px] w-full' src={SliderImage5} alt="" /></SwiperSlide>
+          </Swiper>
         </div>
 
       </section>
