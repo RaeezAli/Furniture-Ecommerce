@@ -25,6 +25,7 @@ import SliderImage2 from '../Images/Slider/Slider2.png';
 import SliderImage3 from '../Images/Slider/Slider3.png';
 import SliderImage4 from '../Images/Slider/Slider4.png';
 import SliderImage5 from '../Images/Slider/Slider5.png';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
 
@@ -89,10 +90,11 @@ export default function Home() {
           ))}
         </div>
         <div className='flex justify-center'>
-          <button
+          <Link 
+            to='/shop'
             style={{ color: 'rgba(184, 142, 47, 1)', border: '1px solid rgba(184, 142, 47,1)' }}
             className='w-max bg-white py-2 px-6 text-base font-semibold'
-          >View All Products</button>
+          >View All Products</Link>
         </div>
       </section>
       <section style={{ background: 'rgba(252, 248, 243, 1)' }} className='py-10 pl-32 flex gap-5'>
@@ -114,11 +116,11 @@ export default function Home() {
             modules={[Pagination]}
             className="mySwiper"
           >
-            <SwiperSlide><img className='h-[450px] w-full' src={SliderImage1} alt="" /></SwiperSlide>
-            <SwiperSlide><img className='h-[450px] w-full' src={SliderImage2} alt="" /></SwiperSlide>
-            <SwiperSlide><img className='h-[450px] w-full' src={SliderImage3} alt="" /></SwiperSlide>
-            <SwiperSlide><img className='h-[450px] w-full' src={SliderImage4} alt="" /></SwiperSlide>
-            <SwiperSlide><img className='h-[450px] w-full' src={SliderImage5} alt="" /></SwiperSlide>
+            <SwiperSlide><img className=' w-full' src={SliderImage1} alt="" /></SwiperSlide>
+            <SwiperSlide><img className=' w-full' src={SliderImage2} alt="" /></SwiperSlide>
+            <SwiperSlide><img className=' w-full' src={SliderImage3} alt="" /></SwiperSlide>
+            <SwiperSlide><img className=' w-full' src={SliderImage4} alt="" /></SwiperSlide>
+            <SwiperSlide><img className=' w-full' src={SliderImage5} alt="" /></SwiperSlide>
           </Swiper>
         </div>
 
