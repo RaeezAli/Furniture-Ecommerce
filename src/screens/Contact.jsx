@@ -1,6 +1,15 @@
+import Hero from "../components/common/Hero";
 
 export default function Contact() {
+
+  const titles = ['Contact' , 'Contact']
+
   return (
-    <div className="h-screen flex justify-center items-center font-bold bg-yellow-200">Contact</div>
+    <main id='page-4' className='mt-20'>
+      <section className="w-full">
+        <Hero titles={titles} />
+      </section>
+      
+    </main>
   )
 }

@@ -8,6 +8,7 @@ export default {
     extend: {
       backgroundImage: {
         'hero-pattern': "url('./src/Images/Home/home-background.png')",
+        'common-background': "url('./src/Images/Common/Common.jpeg')",
       }
     },
   },
