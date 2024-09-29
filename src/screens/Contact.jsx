@@ -6,6 +6,9 @@ export default function Contact() {
 
   return (
     <main id='page-4' className='mt-20'>
+
+      
+
       <section className="w-full">
         <Hero titles={titles} />
       </section>
