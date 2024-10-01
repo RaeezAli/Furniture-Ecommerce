@@ -4,3 +4,232 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
+    box-sizing: border-box;
+  }
+  
+  .login-Section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-image: url("https://img.freepik.com/free-photo/mid-century-modern-living-room-interior-design-with-monstera-tree_53876-129805.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .gg-logo {
+    width: 30px;
+    margin-right: 10px;
+  }
+  
+  .login-page {
+    width: 400px;
+    height: 500px;
+  
+    backdrop-filter: blur(40px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  
+  .heading {
+    width: 80%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 12px;
+  }
+  
+  .user-Data-Input {
+    width: 80%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .user-Data-Input .email-input,
+  .userName-input {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 17px;
+    margin: 8px 0 5px 0;
+    border: 1px solid gold;
+  }
+  .userName-input:focus {
+    outline: 1px solid gold;
+  }
+  .email-input:focus {
+    outline: 1px solid gold;
+  }
+  
+  .user-Data-Input .password-section {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin: 8px 0 10px 0;
+  
+    border-radius: 7px;
+    justify-content: space-evenly;
+  
+    background-color: white;
+    border: 1px solid gold;
+  }
+  
+  .user-Data-Input .password-section .password-input {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    font-size: 17px;
+    border: 0;
+  
+    border: 1px solid gold;
+  
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+  }
+  
+  .user-Data-Input .password-section .password-input:focus {
+    outline: 1px solid gold;
+  }
+  
+  .user-Data-Input .password-section .showPassword {
+    height: 100%;
+    width: 15%;
+  
+    cursor: pointer;
+    color: white;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    font-size: 13px;
+    user-select: none;
+  }
+  
+  .showPassword i {
+    color: black;
+  }
+  
+  .user-Data-Input a {
+    font-weight: bold;
+    color: #12372a;
+    text-decoration: none;
+  }
+  
+  .user-Data-Input .createAcc-button {
+    width: 100%;
+    height: 40px;
+    border-radius: 7px;
+    margin: 25px 0;
+    background-color: #b88e2f;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border: none;
+  }
+  
+  .margin-section {
+    width: 85%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .margin-section .margin {
+    height: 1px;
+    width: 40%;
+    background-color: black;
+  }
+  
+  .margin-section span {
+    margin: 0 10px;
+  }
+  
+  .button-section {
+    width: 80%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .button-section .google-signUp-button {
+    width: 100%;
+    height: 40px;
+    border-radius: 7px;
+    margin: 5px 0 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    margin-top: 20px;
+    background-color: #b88e2f;
+  }
+  
+  @media (max-width: 768px) {
+    .login-page {
+      max-width: 370px;
+    }
+  
+    .google-signUp-button span {
+      font-size: 14px;
+    }
+  
+    .heading span {
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .login-page {
+      max-width: 350px;
+      padding: 15px;
+    }
+  
+    input,
+    button {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .google-signUp-button {
+      padding: 8px;
+    }
+  
+    .google-signUp-button span {
+      font-size: 12px;
+    }
+  
+    .heading span {
+      font-size: 22px;
+    }
+  
+    .showPassword i {
+      font-size: 16px;
+    }
+  }
+  
