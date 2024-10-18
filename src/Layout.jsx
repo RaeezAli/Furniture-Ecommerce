@@ -4,9 +4,9 @@ import Footer from './components/common/Footer.jsx';
 export default function Layout() {
   return (
     <>
-      <Navigation />
+      {/* <Navigation /> */}
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }
