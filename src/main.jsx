@@ -11,7 +11,8 @@ import Home from './screens/Home.jsx';
 import About from './screens/About.jsx';
 import Contact from './screens/Contact.jsx';
 import Shop from './screens/Shop.jsx';
-
+import Product from './components/Product-page.jsx';
+import BillingDetailsForm from './components/Billing.jsx';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -32,6 +33,14 @@ const router = createBrowserRouter([
       {
         path: 'contact',
         element: <Contact />,
+      },
+      {
+        path: 'product',
+        element: <Product />,
+      },
+      {
+        path: 'billing',
+        element: <BillingDetailsForm />,
       }
     ]
   }
