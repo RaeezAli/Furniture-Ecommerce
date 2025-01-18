@@ -16,15 +16,12 @@ export default function About() {
                 alt="Responsive Image"
                 style={{ width: "100%" }}
               />
-              {/* SVG placed below the image */}
               <div className="md:ml-5 flex gap-2 mt-4">
                 <img src="src/svgs/Vector (1).svg" alt="SVG" />{" "}
-                {/* Fix the path */}
                 <p>Admin</p>
                 <img src="src/svgs/uis_calender.svg" alt="SVG" />{" "}
-                {/* Fix the path */}
                 <p>14 Oct 2022</p>
-                <img src="src/svgs/ci_tag.svg" alt="SVG" /> {/* Fix the path */}
+                <img src="src/svgs/ci_tag.svg" alt="SVG" />
                 <p>Wood</p>
               </div>
               <div className="mt-4 grid gap-5 text-center md:text-left">
@@ -43,9 +40,7 @@ export default function About() {
               </div>
             </div>
 
-            {/* Search Bar and Categories Section */}
             <div className="flex justify-center items-center md:flex flex-col md:justify-start sm:justify-center md:mr-9 md:ml-7 mt-4">
-              {/* Search Bar */}
               <div className="flex items-center w-[311px] h-[58px] border-2 border-gray-300 rounded-lg overflow-hidden">
                 <input
                   type="text"
@@ -56,7 +51,6 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Categories Section */}
               <div className="md:mt-6 mt-4 w-[270px] flex flex-col gap-7">
                 <h1 className="text-lg font-semibold">Categories</h1>
                 <div className="md:grid md:gap-5 gap-2">
@@ -78,7 +72,6 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Recent Posts Section */}
               <div className="mt-4 w-[270px] flex flex-col gap-3">
                 <h1 className="text-lg font-semibold md:mt-44">Recent Posts</h1>
                 {[
