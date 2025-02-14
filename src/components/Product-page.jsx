@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Star, Minus, Plus, Facebook, Linkedin, Twitter } from "lucide-react";
-import Description from "./Description";
+import Description from "./ProdDescription";
 
 const Product = () => {
   const [quantity, setQuantity] = useState(1);

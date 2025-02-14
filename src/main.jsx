@@ -41,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: 'billing',
         element: <BillingDetailsForm />,
+      },
+      {
+        path: 'billing',
+        element: <BillingDetailsForm />,
       }
     ]
   }

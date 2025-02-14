@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Description = () => {
+const ProdDescription = () => {
   const [activeTab, setActiveTab] = useState("Description");
 
   const tabs = ["Description", "Additional Information", "Reviews (5)"];
@@ -74,4 +74,4 @@ const Description = () => {
   );
 };
 
-export default Description;
+export default ProdDescription;
