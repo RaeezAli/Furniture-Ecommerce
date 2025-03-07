@@ -1,91 +1,121 @@
-
-
-import '../App.css';
-
-
-import Hero from "../components/common/Hero";
-
-// Dummy 
-import getProducts from "../actions/getProducts";
-
-// Card Component
-import Card from '../components/common/Card';
+import "../App.css"
+import Hero from "../components/common/Hero"
+import getProducts from "../actions/getProducts"
+import Card from "../components/common/Card"
 
 // SVG's
-import ShippingIcon from '../svgs/ShippingIcon';
-import GuaranteeIcon from '../svgs/GuaranteeIcon';
-import CustomerSupportIcon from '../svgs/CustomerSupportIcon';
-import TrophyIcon from '../svgs/TrophyIcon';
-import Service from "../components/about/Service";
-import FilterIcon from "../svgs/FilterIcon";
-import GridBigRoundIcon from "../svgs/GridBigRoundIcon";
-import ViewList from "../svgs/ViewList";
+import ShippingIcon from "../svgs/ShippingIcon"
+import GuaranteeIcon from "../svgs/GuaranteeIcon"
+import CustomerSupportIcon from "../svgs/CustomerSupportIcon"
+import TrophyIcon from "../svgs/TrophyIcon"
+import FilterIcon from "../svgs/FilterIcon"
+import GridBigRoundIcon from "../svgs/GridBigRoundIcon"
+import ViewList from "../svgs/ViewList"
+import { Link } from "react-router-dom"
 
 export default function Shop() {
-
-  const titles = ['Shop', 'Shop'];
+  const titles = ["Shop", "Shop"]
+  const products = getProducts()
 
   const services = [
     {
       icon: <TrophyIcon />,
-      title: 'High Quality',
-      description: 'crafted from top materials',
+      title: "High Quality",
+      description: "crafted from top materials",
     },
     {
       icon: <GuaranteeIcon />,
-      title: 'Warranty Protection',
-      description: 'Over 2 years',
+      title: "Warranty Protection",
+      description: "Over 2 years",
     },
     {
       icon: <ShippingIcon />,
-      title: 'Free Shipping',
-      description: 'Order over 150 $',
+      title: "Free Shipping",
+      description: "Order over 150 $",
     },
     {
       icon: <CustomerSupportIcon />,
-      title: '24 / 7 Support',
-      description: 'Dedicated support',
+      title: "24 / 7 Support",
+      description: "Dedicated support",
     },
-  ];
+  ]
 
   return (
-    <main id='page-2' className='mt-20'>
+    <main id="page-2" className="mt-20">
+      {/* Hero Section */}
       <section className="w-full">
         <Hero titles={titles} />
       </section>
-      <section style={{ background: 'rgba(252, 248, 243, 1)' }} className='w-full p-8 flex justify-between'>
-        <div className="flex items-center gap-6 font-normal text-xl">
-          <FilterIcon />
-          Filter
-          <GridBigRoundIcon />
-          <ViewList />
-          <span className="text-base border-l-2 border-gray-800 flex items-center pl-6">Showing 1{'–'}8 of 8 results</span>
+
+      {/* Filter Section */}
+      <section className="w-full bg-[#FCF8F3] p-4 md:p-6 lg:p-8 flex flex-col md:flex-row justify-between gap-4">
+        <div className="flex flex-wrap items-center gap-3 md:gap-6 font-normal text-base md:text-xl">
+          <button className="flex items-center gap-2 hover:text-amber-700 transition-colors">
+            <FilterIcon />
+            <span>Filter</span>
+          </button>
+          <div className="flex items-center gap-3 ml-2">
+            <button className="p-1.5 rounded-md hover:bg-amber-100 transition-all">
+              <GridBigRoundIcon />
+            </button>
+            <button className="p-1.5 rounded-md hover:bg-amber-100 transition-all">
+              <ViewList />
+            </button>
+          </div>
+          <span className="hidden md:flex text-sm md:text-base border-l-2 border-gray-300 items-center pl-4 md:pl-6 text-gray-600">
+            Showing 1–{products.length} of {products.length} results
+          </span>
         </div>
-        <div className="flex gap-4 items-center">
-          Show
-          <input className="py-2 px-3 w-10 outline-none" placeholder="8" type="number" name="" id="" />
-          Sort By
-          <input className="py-2 px-3 outline-none" type="number" name="" id="" placeholder='Default' />
+        <div className="flex flex-wrap gap-3 md:gap-4 items-center">
+          <span className="text-gray-700">Show</span>
+          <select className="py-2 px-3 w-16 border border-gray-200 rounded-md bg-white outline-none focus:border-amber-500 transition-colors">
+            <option value="8">8</option>
+            <option value="16">16</option>
+            <option value="24">24</option>
+          </select>
+          <span className="text-gray-700">Sort By</span>
+          <select className="py-2 px-3 border border-gray-200 rounded-md bg-white outline-none focus:border-amber-500 transition-colors">
+            <option value="default">Default</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A to Z</option>
+          </select>
         </div>
       </section>
-      <section className='py-10 px-28 grid gap-5'>
-        <div className='grid grid-cols-4 gap-6'>
-          {getProducts().map((item, index) => (
-            <div key={index} className="group">
+
+      {/* Products Grid */}
+      <Link to='/product'>
+      <section className="py-8 md:py-10 px-4 md:px-8 lg:px-16 xl:px-28">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        
+
+          {products.map((item, index) => (
+            <div key={index} className="group transform transition-transform duration-300 hover:-translate-y-1">
               <Card props={item} />
             </div>
           ))}
         </div>
       </section>
-      <section style={{ background: 'rgba(252, 248, 243, 1)' }} className='w-full px-12 py-24 grid grid-cols-4 gap-4'>
-        {services.map((item, idx) => {
-          return (
-            <div className="flex gap-4 justify-center items-center" key={idx}>
-              <Service title={item.title} icon={item.icon} desc={item.description} />
+      </Link>
+
+      {/* Services Section */}
+      <section className="w-full bg-[#FCF8F3] px-4 md:px-8 lg:px-12 py-12 md:py-16 lg:py-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((item, idx) => (
+            <div
+              className="flex gap-4 justify-center items-center bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+              key={idx}
+            >
+              <div className="text-amber-800">{item.icon}</div>
+              <div>
+                <h3 className="font-semibold text-lg">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.description}</p>
+              </div>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </section>
     </main>
   )
 }
+

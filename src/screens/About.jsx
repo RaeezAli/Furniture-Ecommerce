@@ -1,29 +1,23 @@
 import { FaSearch } from "react-icons/fa"; // Install react-icons if not already installed
+import img1 from '../Images/about/68 (1).png'
 
 export default function About() {
   const titles = ["About", "About"];
 
   return (
     <>
-      <main id="page-3" className="mt-20 ml-7 ">
+      <main id="page-3" className="mt-36 ml-7 ">
         <section className="w-full">
           <div className="md:flex-row sm:flex-col-reverse flex-col-reverse flex justify-center w-full">
             {/* Image and Paragraph Section */}
             <div className="flex flex-col items-center md:items-start w-full mt-4">
               <img
                 className="h-auto max-w-[350px] md:w-[500px] lg:max-w-[600px] xl:max-w-[800px] md:ml-5 xs:items-center object-cover lg:ml-4"
-                src="src\Images\About\68.png"
+                src={img1}
                 alt="Responsive Image"
                 style={{ width: "100%" }}
               />
-              <div className="md:ml-5 flex gap-2 mt-4">
-                <img src="src/svgs/Vector (1).svg" alt="SVG" />{" "}
-                <p>Admin</p>
-                <img src="src/svgs/uis_calender.svg" alt="SVG" />{" "}
-                <p>14 Oct 2022</p>
-                <img src="src/svgs/ci_tag.svg" alt="SVG" />
-                <p>Wood</p>
-              </div>
+            
               <div className="mt-4 grid gap-5 text-center md:text-left">
                 <h1 className="ml-4">Going all-in with millennial design</h1>
                 <p className="px-4 text-center md:text-left max-w-[300px] md:max-w-[500px] lg:max-w-[800px]">
@@ -121,15 +115,7 @@ export default function About() {
               alt="Responsive Image"
               style={{ width: "100%" }}
             />
-            {/* SVG placed below the image */}
-            <div className="md:ml-5 flex gap-2 mt-4">
-              <img className="" src="src/svgs/Vector (1).svg" alt="SVG" />
-              <p>Admin</p>
-              <img src="src/svgs/uis_calender.svg" alt="SVG" />
-              <p>14 Oct 2022</p>
-              <img src="src/svgs/ci_tag.svg" alt="SVG" />
-              <p>Wood</p>
-            </div>
+     
             <div className="mt-4 grid gap-5 text-center md:text-left">
               <h1 className="ml-4">Going all-in with millennial design</h1>
               <p className="px-4 text-center md:text-left max-w-[300px] md:max-w-[400px] lg:max-w-[800px] ">
@@ -154,15 +140,7 @@ export default function About() {
               alt="Responsive Image"
               style={{ width: "100%" }}
             />
-            {/* SVG placed below the image */}
-            <div className="md:ml-5  mt-4 flex gap-2">
-              <img src="src/svgs/Vector (1).svg" alt="SVG" />
-              <p>Admin</p>
-              <img src="src/svgs/uis_calender.svg" alt="SVG" />
-              <p>14 Oct 2022</p>
-              <img src="src/svgs/ci_tag.svg" alt="SVG" />
-              <p>Wood</p>
-            </div>
+          
             <div className="mt-4 grid gap-5 text-center md:text-left">
               <h1 className="ml-4">Going all-in with millennial design</h1>
               <p className="px-4 text-center md:text-left max-w-[300px] md:max-w-[400px] lg:max-w-[800px]">

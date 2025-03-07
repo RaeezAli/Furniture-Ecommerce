@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Star, Minus, Plus, Facebook, Linkedin, Twitter } from "lucide-react";
 import Description from "./ProdDescription";
+import { Link } from "react-router-dom";
 
 const Product = () => {
   const [quantity, setQuantity] = useState(1);
 
   return (
-    <div className="pt-24 max-w-7xl mx-auto p-8"> {/* Added pt-16 for spacing */}
+    <div className="pt-24 mt-16 max-w-7xl mx-auto p-8"> {/* Added pt-16 for spacing */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="flex">
           <div className="w-1/5 mr-4">
@@ -88,9 +89,12 @@ const Product = () => {
                 <Plus className="w-4 h-4" />
               </button>
             </div>
+            <Link to='/billing'>
+
             <button className="bg-[#B88E2F] text-white px-6 py-2 rounded-md hover:bg-[#A47E2A]">
-              Add To Cart
+               Checkout
             </button>
+            </Link>
             <button className="border border-gray-300 px-6 py-2 rounded-md hover:bg-gray-100">
               + Compare
             </button>
