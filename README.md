@@ -1,8 +1,62 @@
-# React + Vite
+# Furniro - Luxury Furniture E-Commerce
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Furniro is a modern, high-end e-commerce application for premium furniture collection. Built with React and styled with Tailwind CSS, it offers a seamless and aesthetically pleasing shopping experience.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **🔐 User Authentication**: Secure Login and Signup flows implemented with `react-hook-form` and validation. Includes persistent session simulation via `localStorage`.
+- **🛒 Interactive Shop**: Dynamic product grid with sophisticated sorting functionality (Price: Low to High, Price: High to Low, Name: A to Z).
+- **💳 Simulated Checkout**: A complete billing flow with a 1-second processing delay and realistic success/error feedback modals.
+- **✉️ Contact & Support**: Integrated contact form with validation and a precise Google Maps location in Garden West, Karachi.
+- **👤 User Account Management**: Desktop and mobile-responsive account dropdown with Profile, Settings, and single-click Logout functionality.
+- **📱 Fully Responsive**: Optimized for all devices, from mobile phones to high-resolution desktops.
+
+## 🛠 Tech Stack
+
+- **Core**: [React](https://reactjs.org/) + [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Form Handling**: [React Hook Form](https://react-hook-form.com/)
+- **Navigation**: [React Router Dom](https://reactrouter.com/)
+- **Icons**: [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/)
+- **Animations**: Tailwind-based micro-animations and transitions.
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v16 or higher)
+- npm (v7 or higher)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/RaeezAli/Furniture-Ecommerce.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd Furniture-Ecommerce
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## 📝 Credentials for Testing
+
+- **Email**: `ali@gmail.com`
+- **Password**: `ali`
+
+## 🤝 Contributing
+
+Feel free to open issues or submit pull requests to contribute to the project!
