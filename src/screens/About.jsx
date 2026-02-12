@@ -1,4 +1,4 @@
-import { FaSearch } from "react-icons/fa" // Install react-icons if not already installed
+import { FaSearch } from "react-icons/fa"
 import img1 from "../Images/about/68 (1).png"
 import img2 from "../Images/about/Rectangle 69 (1).png"
 import img3 from "../Images/about/Rectangle 69 (2).png"
@@ -77,7 +77,7 @@ export default function About() {
 
             {/* Second article */}
             <article className="w-full mb-12">
-              <div className="overflow-hidden rounded-lg">
+              <div className="overflow-hidden rounded-lg" >
                 <img
                   className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
                   src={img6 || "/placeholder.svg"}
@@ -144,14 +144,14 @@ export default function About() {
           <div className="w-full md:w-1/3 md:max-w-[350px] mb-8 md:mb-0">
             <div className="sticky top-24 space-y-8">
               {/* Search */}
-              <div className="w-full max-w-[350px] mx-auto mt-12">
+              <div className="w-full max-w-[350px] mx-auto mt-12 md:mt-0">
                 <div className="flex items-center w-full h-[58px] border-2 border-gray-300 rounded-lg overflow-hidden focus-within:border-[#B88E2F] transition-colors">
                   <input
                     type="text"
                     placeholder="Search articles..."
                     className="flex-1 h-full focus:outline-none text-gray-700 px-4"
                   />
-                  <button className="px-2 text-gray-500 hover:text-[#B88E2F] transition-colors">
+                  <button className="px-4 text-gray-500 hover:text-[#B88E2F] transition-colors">
                     <FaSearch />
                   </button>
                 </div>
@@ -159,15 +159,15 @@ export default function About() {
 
               {/* Categories */}
               <div className="w-full max-w-[350px] mx-auto">
-                <h3 className="text-lg font-semibold mb-4">Categories</h3>
-                <div className="space-y-3">
+                <h3 className="text-xl font-semibold mb-6">Categories</h3>
+                <div className="space-y-4">
                   {categories.map((category) => (
                     <div
                       key={category.name}
-                      className="flex justify-between w-full text-sm border-b border-gray-100 pb-2 hover:text-[#B88E2F] cursor-pointer transition-colors"
+                      className="flex justify-between w-full text-base border-b border-gray-100 pb-3 hover:text-[#B88E2F] cursor-pointer transition-colors"
                     >
-                      <p>{category.name}</p>
-                      <p className="bg-[#F9F1E7] px-2 rounded-full text-xs">{category.count}</p>
+                      <p className="text-gray-500">{category.name}</p>
+                      <p className="text-gray-400">{category.count}</p>
                     </div>
                   ))}
                 </div>
@@ -175,10 +175,10 @@ export default function About() {
 
               {/* Recent Posts */}
               <div className="w-full max-w-[350px] mx-auto">
-                <h3 className="text-lg font-semibold mb-4">Recent Posts</h3>
-                <div className="space-y-4">
+                <h3 className="text-xl font-semibold mb-6">Recent Posts</h3>
+                <div className="space-y-6">
                   {recentPosts.map((post, index) => (
-                    <div key={index} className="flex gap-3 group cursor-pointer">
+                    <div key={index} className="flex gap-4 group cursor-pointer">
                       <div className="w-[80px] h-[80px] overflow-hidden rounded-md flex-shrink-0">
                         <img
                           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
@@ -186,8 +186,8 @@ export default function About() {
                           alt={post.title}
                         />
                       </div>
-                      <div className="flex flex-col">
-                        <h4 className="text-sm font-medium group-hover:text-[#B88E2F] transition-colors line-clamp-2">
+                      <div className="flex flex-col justify-center">
+                        <h4 className="text-sm font-medium group-hover:text-[#B88E2F] transition-colors line-clamp-2 leading-relaxed">
                           {post.title}
                         </h4>
                         <p className="text-xs text-[#9F9F9F] mt-1">{post.date}</p>
@@ -197,10 +197,10 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Tags Cloud - Added feature */}
+              {/* Tags Cloud */}
               <div className="w-full max-w-[350px] mx-auto">
-                <h3 className="text-lg font-semibold mb-4">Popular Tags</h3>
-                <div className="flex flex-wrap gap-2">
+                <h3 className="text-xl font-semibold mb-6">Popular Tags</h3>
+                <div className="flex flex-wrap gap-2 text-[#9F9F9F]">
                   {[
                     "Design",
                     "Interior",
@@ -215,7 +215,7 @@ export default function About() {
                   ].map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-[#F9F1E7] text-sm rounded-full cursor-pointer hover:bg-[#B88E2F] hover:text-white transition-colors"
+                      className="px-4 py-2 bg-gray-50 text-sm rounded-lg cursor-not-allowed hover:bg-[#B88E2F] hover:text-white transition-all"
                     >
                       {tag}
                     </span>
@@ -229,4 +229,3 @@ export default function About() {
     </main>
   )
 }
-

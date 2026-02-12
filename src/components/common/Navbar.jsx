@@ -10,7 +10,6 @@ import AcountIcon from "../../assets/Acount-Alert.jsx"
 import SearchIcon from "../../assets/SearchIcon.jsx"
 import HeartIcon from "../../assets/Heart.jsx"
 import CartIcon from "../../assets/Cart.jsx"
-import { FaRegUser } from "react-icons/fa6";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
