@@ -52,6 +52,26 @@ Furniro is a modern, high-end e-commerce application for premium furniture colle
    npm run dev
    ```
 
+## 🌐 Deployment
+
+This project is deployment-ready and optimized for platforms like **Vercel** or **Netlify**.
+
+### Deploy to Vercel (Recommended)
+
+1. Push your code to GitHub.
+2. Go to [Vercel](https://vercel.com/) and import your repository.
+3. The project includes a `vercel.json` to handle React Router client-side routing automatically.
+4. Click **Deploy**.
+
+### Deploy to Netlify
+
+1. Push your code to GitHub.
+2. Go to [Netlify](https://www.netlify.com/) and "Import from GitHub".
+3. Use the following build settings:
+   - **Build Command**: `npm run build`
+   - **Publish directory**: `dist`
+4. To support React Router links, add a `_redirects` file in the `public` folder with: `/* /index.html 200`.
+
 ## 📝 Credentials for Testing
 
 - **Email**: `ali@gmail.com`
