@@ -1,7 +1,7 @@
 import image1 from '../Images/Product/image1.png';
 import image2 from '../Images/Product/image2.png';
 import image3 from '../Images/Product/image3.png';
-import image4 from '../Images/Product/image4.png';
+import image4 from '../Images/Product/Image4.png'
 
 
 export default function getProducts() {
