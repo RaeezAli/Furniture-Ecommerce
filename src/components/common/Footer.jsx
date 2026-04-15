@@ -2,28 +2,43 @@
 
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import { collection, addDoc, serverTimestamp } from "firebase/firestore"
+import { db } from "../../firebase/config"
 
 export default function Footer() {
   const [email, setEmail] = useState("")
   const [isSubscribed, setIsSubscribed] = useState(false)
+  const [subscribing, setSubscribing] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (email) {
-      setIsSubscribed(true)
-      setEmail("")
-      setTimeout(() => setIsSubscribed(false), 3000)
+      setSubscribing(true)
+      try {
+        await addDoc(collection(db, "newsletter"), {
+          email: email,
+          subscribedAt: serverTimestamp(),
+          isActive: true,
+        })
+        setIsSubscribed(true)
+        setEmail("")
+        setTimeout(() => setIsSubscribed(false), 3000)
+      } catch (error) {
+        console.error("Error subscribing to newsletter:", error)
+      } finally {
+        setSubscribing(false)
+      }
     }
   }
 
   return (
-    <section className="w-full px-3 sm:px-4 md:px-8 lg:px-16 xl:px-24 py-6 sm:py-8 md:py-11">
-      <footer className="w-full flex flex-col gap-8">
+    <section className="w-full px-4 md:px-8 lg:px-16 py-10 md:py-8 border-t border-[#E5E7EB]">
+      <footer className="max-w-7xl mx-auto flex flex-col gap-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="flex flex-col gap-4 sm:gap-6 md:gap-8">
-            <h1 className="text-xl sm:text-2xl font-bold">Funiro.</h1>
-            <p className="text-sm sm:text-base font-normal text-[#9F9F9F]">
+          <div className="flex flex-col gap-6">
+            <h2 className="text-[24px] font-bold text-[#333333]">Furniro.</h2>
+            <p className="text-[16px] font-normal text-[#9F9F9F] leading-[24px]">
               400 University Drive Suite 200 Coral Gables,
               <br />
               FL 33134 USA
@@ -31,63 +46,62 @@ export default function Footer() {
           </div>
 
           {/* Links Column */}
-          <div className="min-w-[120px]">
-            <ul className="grid gap-4 md:gap-6">
-              <li className="text-[#9F9F9F] font-medium text-sm sm:text-base">Links</li>
-              <li className="hover:text-[#B88E2F] transition-colors text-sm sm:text-base">
-                <Link to="/home">Home</Link>
+          <div className="lg:pl-12">
+            <h4 className="text-[#9F9F9F] font-medium text-[16px] mb-8">Links</h4>
+            <ul className="flex flex-col gap-8 text-[16px] font-medium text-[#333333]">
+              <li>
+                <Link to="/" className="hover:text-[#B88E2F] transition-colors">Home</Link>
               </li>
-              <li className="hover:text-[#B88E2F] transition-colors text-sm sm:text-base">
-                <Link to="/shop">Shop</Link>
+              <li>
+                <Link to="/shop" className="hover:text-[#B88E2F] transition-colors">Shop</Link>
               </li>
-              <li className="hover:text-[#B88E2F] transition-colors text-sm sm:text-base">
-                <Link to="/about">About</Link>
+              <li>
+                <Link to="/about" className="hover:text-[#B88E2F] transition-colors">About</Link>
               </li>
-              <li className="hover:text-[#B88E2F] transition-colors text-sm sm:text-base">
-                <Link to="/contact">Contact</Link>
+              <li>
+                <Link to="/contact" className="hover:text-[#B88E2F] transition-colors">Contact</Link>
               </li>
             </ul>
           </div>
 
           {/* Help Column */}
-          <div className="min-w-[120px]">
-            <ul className="grid gap-4 md:gap-6">
-              <li className="text-[#9F9F9F] font-medium text-sm sm:text-base">Help</li>
-              <li className="hover:text-[#B88E2F] transition-colors text-sm sm:text-base">Payment Options</li>
-              <li className="hover:text-[#B88E2F] transition-colors text-sm sm:text-base">Returns</li>
-              <li className="hover:text-[#B88E2F] transition-colors text-sm sm:text-base">Privacy Policy</li>
+          <div className="lg:pl-12">
+            <h4 className="text-[#9F9F9F] font-medium text-[16px] mb-8">Help</h4>
+            <ul className="flex flex-col gap-8 text-[16px] font-medium text-[#333333]">
+              <li className="hover:text-[#B88E2F] cursor-pointer transition-colors">Payment Options</li>
+              <li className="hover:text-[#B88E2F] cursor-pointer transition-colors">Returns</li>
+              <li className="hover:text-[#B88E2F] cursor-pointer transition-colors">Privacy Policy</li>
             </ul>
           </div>
 
           {/* Newsletter Column */}
-          <div className="w-full flex flex-col gap-4 md:gap-6">
-            <p className="text-[#9F9F9F] font-medium text-sm sm:text-base">Newsletter</p>
-            <form className="w-full flex flex-col xs:flex-row gap-2 xs:gap-4" onSubmit={handleSubmit}>
+          <div className="flex flex-col gap-6">
+            <h4 className="text-[#9F9F9F] font-medium text-[16px] mb-8">Newsletter</h4>
+            <form className="flex gap-3" onSubmit={handleSubmit}>
               <input
-                style={{ borderBottom: "2px solid black" }}
-                className="outline-none min-w-0 flex-1 pb-1 text-sm sm:text-base"
+                className="outline-none border-b border-black flex-1 pb-1 text-[14px] bg-transparent"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter Your Email"
+                placeholder="Enter Your Email Address"
                 required
               />
               <button
-                style={{ borderBottom: "2px solid black" }}
-                className="font-medium hover:text-[#B88E2F] transition-colors text-sm sm:text-base pb-1 whitespace-nowrap"
+                className="font-medium text-[14px] border-b border-black hover:text-[#B88E2F] hover:border-[#B88E2F] transition-all pb-1 uppercase tracking-wider disabled:opacity-50"
                 type="submit"
+                disabled={subscribing}
               >
-                SUBSCRIBE
+                {subscribing ? "..." : "Subscribe"}
               </button>
             </form>
-            {isSubscribed && <p className="text-green-600 text-xs sm:text-sm">Thank you for subscribing!</p>}
+            {isSubscribed && <p className="text-[#2EC1AC] text-[12px] font-medium">Thank you for subscribing!</p>}
           </div>
         </div>
+
+        <div className="pt-8 border-t border-[#D9D9D9]">
+          <p className="text-[#333333] text-[16px]">2024 funiro. All rights reserved</p>
+        </div>
       </footer>
-
-      <hr className="border-gray-200 my-6 sm:my-8" />
-
-      <div className="text-gray-600 text-xs sm:text-sm">2024 furino. All rights reserved</div>
     </section>
   )
 }
